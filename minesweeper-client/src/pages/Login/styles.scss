@@ -1,0 +1,19 @@
+.login-page {
+    width: 200px;
+    margin: 24px auto 0 auto;
+
+    .form {
+        display: flex;
+        flex-direction: column;
+
+        .MuiTextField-root {
+            padding-bottom: 12px;
+        }
+    }
+
+    .buttons {
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
