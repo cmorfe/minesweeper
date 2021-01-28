@@ -11,15 +11,15 @@ services:
       MYSQL_PASSWORD: minesweeper
       MYSQL_ROOT_HOST: '%'
     ports:
-      - 3306:3306
+      - 3307:3306
 
   api:
     container_name: api
     build: ./minesweeper-API
-    command: java -jar /usr/src/app/target/minesweeper-0.0.1-SNAPSHOT.jar
+    command: java -jar /api/target/minesweeper-0.0.1-SNAPSHOT.jar
     restart: on-failure
     volumes:
-      - ./minesweeper-API/:/usr/src/app/
+      - ./minesweeper-API/:/api/
     depends_on:
       - minesweeper-db
     links:
@@ -28,9 +28,12 @@ services:
       - 8080:8080
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://minesweeper-db:3306/minesweeper
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
 
   web:
     container_name: web
+    stdin_open: true
     build:
       context: ./minesweeper-client
       dockerfile: Dockerfile
@@ -38,5 +41,5 @@ services:
     ports:
     - 3000:3000
     volumes:
-      - '/app/node_modules'
-      - './minesweeper-client:/app'
+    - '/web-client/node_modules'
+    - './minesweeper-client:/web-client'
