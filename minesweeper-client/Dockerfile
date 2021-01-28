@@ -1,10 +1,10 @@
 FROM node:alpine
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-COPY package.json /app
-RUN yarn install
+COPY package.json /usr/src/app
+RUN npm install
 
-COPY . /app
+COPY . /usr/src/app
 
-CMD ["yarn", "run", "start"]
+CMD ["npm", "start"]

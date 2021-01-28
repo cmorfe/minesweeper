@@ -1,0 +1,8 @@
+setup:
+  addons:
+    - plan: cleardb
+      as: DATABASE
+build:
+  docker:
+    web: minesweeper-client/Dockerfile
+    api: minesweeper-API/Dockerfile
