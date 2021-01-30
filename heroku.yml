@@ -1,6 +1,6 @@
 setup:
   addons:
-    - plan: cleardb
+    - plan: cleardb-elliptical-31098
       as: DATABASE
 build:
   docker:
