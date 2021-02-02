@@ -40,7 +40,7 @@ services:
       dockerfile: Dockerfile
     restart: on-failure
     ports:
-    - 3000:3000
+      - 3000:3000
     volumes:
-    - '/usr/src/app/node_modules'
-    - './minesweeper-client:/usr/src/app'
+      - '/usr/src/app/node_modules'
+      - './minesweeper-client:/usr/src/app'
