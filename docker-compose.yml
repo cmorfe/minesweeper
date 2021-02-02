@@ -28,7 +28,7 @@ services:
     ports:
       - 8000:8080
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://b1be863c547a06:06fc2ee3@us-cdbr-east-03.cleardb.com/heroku_e3ef00030b1da17?reconnect=true
+      SPRING_DATASOURCE_URL: jdbc:mysql://minesweeper-db:3306/minesweeper
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
 
